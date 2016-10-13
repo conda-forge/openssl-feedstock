@@ -1,4 +1,4 @@
-{% set version="1.0.2h" %}
+{% set version="1.0.2j" %}
 
 package:
   name: openssl
@@ -7,10 +7,10 @@ package:
 source:
   fn: openssl-{{ version }}.tar.gz
   url: http://www.openssl.org/source/openssl-{{ version }}.tar.gz
-  sha256: 1d4007e53aad94a5b2002fe045ee7bb0b3d98f1a47f8b2bc851dcd1c74332919
+  sha256: e7aff292be21c259c6af26469c7a9b3ba26e9abaaffd325e3dccc9785256c431
 
 build:
-  number: 2
+  number: 0
   no_link: lib/libcrypto.so.1.0.0        # [linux]
   no_link: lib/libcrypto.1.0.0.dylib     # [osx]
   detect_binary_files_with_prefix: True  # [unix]
