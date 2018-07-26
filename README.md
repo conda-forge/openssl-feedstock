@@ -14,14 +14,16 @@ Summary: OpenSSL is an open-source implementation of the SSL and TLS protocols
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/openssl-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/openssl-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/openssl-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/openssl-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/openssl-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/openssl-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/openssl-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/openssl-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/openssl-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/openssl-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/openssl/badges/version.svg)](https://anaconda.org/conda-forge/openssl)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/openssl/badges/downloads.svg)](https://anaconda.org/conda-forge/openssl)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-openssl-green.svg)](https://anaconda.org/conda-forge/openssl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openssl.svg)](https://anaconda.org/conda-forge/openssl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openssl.svg)](https://anaconda.org/conda-forge/openssl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openssl.svg)](https://anaconda.org/conda-forge/openssl) |
 
 Installing openssl
 ==================
