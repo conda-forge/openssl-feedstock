@@ -4,14 +4,17 @@
 
 @echo off
 
+set "LIBSSL_PATH=C:\Windows\System32\libssl-1_1-x64.dll"
+set "LIBCRYPTO_PATH=C:\Windows\System32\libcrypto-1_1-x64.dll"
+
 set "HAS_SYS_LIBS=F"
 set "HAS_SYS_SSL=F"
 set "HAS_SYS_CRYPTO=F"
-if exist C:\Windows\System32\libssl-1_1-x64.dll (
+if exist %LIBSSL_PATH% (
   set "HAS_SYS_LIBS=T"
   set "HAS_SYS_SSL=T"
 )
-if exist C:\Windows\System32\libcrypto-1_1-x64.dll (
+if exist %LIBCRYPTO_PATH% (
   set "HAS_SYS_LIBS=T"
   set "HAS_SYS_CRYPTO=T"
 )
