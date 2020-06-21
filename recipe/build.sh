@@ -62,10 +62,6 @@ CC=${CC}" ${CPPFLAGS} ${CFLAGS}" \
 # make -j${CPU_COUNT} ${VERBOSE_AT}
 make -j${CPU_COUNT}
 
-# expected error: https://github.com/openssl/openssl/issues/6953
-#    OK to ignore: https://github.com/openssl/openssl/issues/6953#issuecomment-415428340
-rm test/recipes/04-test_err.t
-
 # When testing this via QEMU, even though it ends printing:
 # "ALL TESTS SUCCESSFUL."
 # .. it exits with a failure code.
