@@ -52,6 +52,8 @@ outputs:
         - copy NUL checksum.txt        # [win]
         - touch checksum.txt           # [unix]
         - openssl sha256 checksum.txt
+      downstreams:
+        - cryptography
 
   - name: libopenssl-static
     requirements:
