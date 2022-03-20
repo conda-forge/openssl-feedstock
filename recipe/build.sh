@@ -46,11 +46,11 @@ export OPENSSL_VERSION_BUILD_METADATA="+fips+conda_forge"
 
 make -j${CPU_COUNT}
 
-if [[ "$target_platform" = "linux-aarch64" ]]; then
-  # This test seems to fail when using qemu on aarch64
-  # https://github.com/conda-forge/openssl-feedstock/pull/84#issuecomment-1072908608
-  rm ./test/recipes/30-test_afalg.t
-fi
+# if [[ "$target_platform" = "linux-aarch64" ]]; then
+#   # This test seems to fail when using qemu on aarch64
+#   # https://github.com/conda-forge/openssl-feedstock/pull/84#issuecomment-1072908608
+#   rm ./test/recipes/30-test_afalg.t
+# fi
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]] || [[ "$(uname -s)" = "Linux" && "$target_platform" = "linux-"* ]]; then
   if [[ "${CONDA_BUILD_CROSS_COMPILATION}" = "1" ]]; then
