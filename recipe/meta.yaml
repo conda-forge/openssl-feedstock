@@ -2,7 +2,7 @@
 
 package:
   name: openssl_split
-  version: {{ version }}
+  version: {{ version.replace("-", ".") }}
 
 source:
   url: http://www.openssl.org/source/openssl-{{ version }}.tar.gz
