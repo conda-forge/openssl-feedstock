@@ -1,17 +1,17 @@
 bot:
   abi_migration_branches:
   - 1.1.1
+build_platform:
+  linux_ppc64le: linux_64
+  osx_arm64: osx_64
+conda_build:
+  pkg_format: '2'
 conda_forge_output_validation: true
+github:
+  branch_name: main
+  tooling_branch_name: main
 provider:
   # failing test on aarch in emulation, see #84
   linux_aarch64: travis
   linux_ppc64le: default
-build_platform:
-  osx_arm64: osx_64
-  linux_ppc64le: linux_64
-github:
-  branch_name: main
-  tooling_branch_name: main
-conda_build:
-  pkg_format: '2'
 test: native_and_emulated
