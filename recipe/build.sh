@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 PERL=${PREFIX}/bin/perl
 declare -a _CONFIG_OPTS
