@@ -19,6 +19,7 @@ requirements:
     - nasm               # [win]
     - make               # [unix]
     - perl *
+    - sysroot_linux-64  2.17  # [linux64]
   # Empty host section to ensure that this is identified as cb3
   host:
 
@@ -38,6 +39,7 @@ outputs:
         - {{ compiler('c') }}
         - make
         - perl *
+        - sysroot_linux-64  2.17  # [linux64]
       # Empty host section to ensure that this is identified as cb3
       # FIXME: this doesn't seem to be enough. We need a compiler in build
       # with `compiler` jinja used to not use legacy cb2 build==host
