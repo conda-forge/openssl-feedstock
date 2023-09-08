@@ -9,7 +9,6 @@ _CONFIG_OPTS+=(enable-legacy)
 _CONFIG_OPTS+=(no-fips)
 _CONFIG_OPTS+=(no-module)
 _CONFIG_OPTS+=(no-zlib)
-_CONFIG_OPTS+=(quic)
 _CONFIG_OPTS+=(shared)
 _CONFIG_OPTS+=(threads)
 
