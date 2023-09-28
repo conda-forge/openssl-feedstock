@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/openssl/openssl/releases/download/openssl-{{ ver_tag }}/openssl-{{ ver_tag }}.tar.gz
-  sha256: acc5b9bf577a989543301a584df9d1c235004157bc90b5e69b4d74b4dbee0411
+  sha256: b2a7c8860236129ecf958e2f1feb2ac735a5d5fe63c36746fcdf49850e744176
 
 build:
   number: 0
