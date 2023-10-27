@@ -1,4 +1,4 @@
-{% set ver_tag = "3.2.0-alpha2" %}
+{% set ver_tag = "3.2.0-beta1" %}
 # conda doesn't handle hyphens in version
 {% set version = ver_tag.replace("-", ".") %}
 
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/openssl/openssl/releases/download/openssl-{{ ver_tag }}/openssl-{{ ver_tag }}.tar.gz
-  sha256: b2a7c8860236129ecf958e2f1feb2ac735a5d5fe63c36746fcdf49850e744176
+  sha256: 2218e18fbbe8c41ec4a83ac3072c78ac94b7092db44a10d9f689a57bbc17c057
 
 build:
   number: 0
