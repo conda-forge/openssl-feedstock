@@ -1,6 +1,6 @@
-{% set version = "3.2.0.alpha2" %}
-# conda doesn't handle hyphens in version
 {% set ver_tag = "3.2.0-alpha2" %}
+# conda doesn't handle hyphens in version
+{% set version = ver_tag.replace("-", ".") %}
 
 package:
   name: openssl_split
