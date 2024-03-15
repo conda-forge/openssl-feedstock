@@ -4,6 +4,6 @@ provider:
   # failing test on aarch in emulation, see #84
   linux_aarch64: travis
   linux_ppc64le: default
-test_on_native_only: true
 conda_build:
   pkg_format: '2'
+test: native_and_emulated
