@@ -6,6 +6,9 @@ if "%ARCH%"=="32" (
     set OSSL_CONFIGURE=VC-WIN64A
 )
 
+bash -c "file recipe/activate-win.sh"
+exit 1
+
 REM Configure step
 REM
 REM Conda currently does not perform prefix replacement on Windows, so
