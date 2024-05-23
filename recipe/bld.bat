@@ -6,6 +6,7 @@ if "%ARCH%"=="32" (
     set OSSL_CONFIGURE=VC-WIN64A
 )
 
+cd %RECIPE_DIR%
 bash -c "file activate-win.sh"
 exit 1
 
