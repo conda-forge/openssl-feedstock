@@ -63,6 +63,9 @@ outputs:
 
         # test pkgconfig metadata
         - pkg-config --print-errors --exact-version "{{ version }}" openssl
+        # Ensure bash activation use LF file endings
+        - bash -c "file $PREFIX/etc/conda/activate.d/openssl_activate-win.sh | grep -v CRLF"      # [win]
+        - bash -c "file $PREFIX/etc/conda/deactivate.d/openssl_deactivate-win.sh | grep -v CRLF"  # [win]
 
   - name: libopenssl-static
     script: install_libopenssl-static.sh  # [unix]
