@@ -6,7 +6,7 @@ if "%ARCH%"=="32" (
     set OSSL_CONFIGURE=VC-WIN64A
 )
 
-bash -c "file recipe/activate-win.sh"
+bash -c "file activate-win.sh"
 exit 1
 
 REM Configure step
