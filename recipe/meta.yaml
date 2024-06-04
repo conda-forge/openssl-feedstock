@@ -1,4 +1,4 @@
-{% set version = "3.2.1" %}
+{% set version = "3.2.2" %}
 
 package:
   name: openssl_split
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://www.openssl.org/source/openssl-{{ version }}.tar.gz
-  sha256: 83c7329fe52c850677d75e5d0b0ca245309b97e8ecbcfdc1dfdc4ab9fac35b39
+  sha256: 197149c18d9e9f292c43f0400acaba12e5f52cacfe050f3d199277ea738ec2e7
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -54,6 +54,7 @@ outputs:
     test:
       requires:
         - pkg-config
+        - ripgrep
       commands:
         - copy NUL checksum.txt        # [win]
         - touch checksum.txt           # [unix]
@@ -63,6 +64,15 @@ outputs:
 
         # test pkgconfig metadata
         - pkg-config --print-errors --exact-version "{{ version }}" openssl
+
+        # make it possible to check !ERRORLEVEL!
+        - setlocal EnableDelayedExpansion   # [win]
+        # ensure (de)activation scripts for bash-on-win do not contain crlf line endings;
+        # ripgrep will return exit code 1 if no match is found, which is what we want after
+        # filtering to the carriage-return character that shouldn't be there.
+        {% for task in ["activate", "deactivate"] %}
+        - type %CONDA_PREFIX%\etc\conda\{{ task }}.d\openssl_{{ task }}-win.sh | rg \r & if !ERRORLEVEL! EQU 1 (exit 0) else (exit 1)  # [win]
+        {% endfor %}
 
   - name: libopenssl-static
     script: install_libopenssl-static.sh  # [unix]
