@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://www.openssl.org/source/openssl-{{ version }}.tar.gz
+  url: https://github.com/openssl/openssl/releases/download/openssl-{{ version }}/openssl-{{ version }}.tar.gz
   sha256: 053a31fa80cf4aebe1068c987d2ef1e44ce418881427c4464751ae800c31d06c
 
 build:
