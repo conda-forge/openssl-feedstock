@@ -1,12 +1,12 @@
-{% set version = "3.4.1" %}
+{% set version = "3.5.0-alpha1" %}
 
 package:
   name: openssl_split
-  version: {{ version }}
+  version: {{ version.replace("-", ".") }}
 
 source:
   url: https://github.com/openssl/openssl/releases/download/openssl-{{ version }}/openssl-{{ version }}.tar.gz
-  sha256: 002a2d6b30b58bf4bea46c43bdd96365aaf8daa6c428782aa4feee06da197df3
+  sha256: 9e8c009dbe9b5a4c9f56f799d0416a4c1841f1f391175e7fc891d1568891cc7d
 
 build:
   number: 0
