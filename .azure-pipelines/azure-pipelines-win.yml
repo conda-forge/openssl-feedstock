@@ -8,6 +8,9 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
+      win_64_:
+        CONFIG: win_64_
+        UPLOAD_PACKAGES: 'True'
       win_arm64_:
         CONFIG: win_arm64_
         UPLOAD_PACKAGES: 'True'
