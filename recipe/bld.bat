@@ -1,6 +1,6 @@
 @echo on
 
-if "%target_platform%"=="" (
+if "%target_platform%"=="win-arm64" (
     set OSSL_CONFIGURE=VC-WIN64-ARM
 ) else if "%ARCH%"=="32" (
     set OSSL_CONFIGURE=VC-WIN32
