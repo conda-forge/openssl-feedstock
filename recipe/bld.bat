@@ -40,5 +40,7 @@ nmake
 if %ERRORLEVEL% neq 0 exit 1
 
 REM Testing step
-nmake test
-if %ERRORLEVEL% neq 0 exit 1
+if NOT "%CONDA_BUILD_CROSS_COMPILATION%" == "1" (
+    nmake test
+    if %ERRORLEVEL% neq 0 exit 1 
+)
