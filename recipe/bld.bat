@@ -1,8 +1,10 @@
 @echo on
 
-if "%ARCH%"=="32" (
+if "%target_platform%"=="win-arm64" (
+    set OSSL_CONFIGURE=VC-WIN64-ARM
+) else if "%ARCH%"=="32" (
     set OSSL_CONFIGURE=VC-WIN32
-) ELSE (
+) else (
     set OSSL_CONFIGURE=VC-WIN64A
 )
 
@@ -38,5 +40,7 @@ nmake
 if %ERRORLEVEL% neq 0 exit 1
 
 REM Testing step
-nmake test
-if %ERRORLEVEL% neq 0 exit 1
+if NOT "%CONDA_BUILD_CROSS_COMPILATION%" == "1" (
+    nmake test
+    if %ERRORLEVEL% neq 0 exit 1
+)
