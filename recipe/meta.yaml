@@ -7,9 +7,12 @@ package:
 source:
   url: https://github.com/openssl/openssl/releases/download/openssl-{{ version }}/openssl-{{ version }}.tar.gz
   sha256: c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf
+  patches:
+    # backport https://github.com/openssl/openssl/pull/28603
+    - gh-28603.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
