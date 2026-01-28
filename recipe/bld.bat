@@ -1,7 +1,10 @@
 @echo on
 
+REM use VC-WIN64-CLANGASM-ARM on arm64 to use clang-cl
+REM from Visual Studio to enable assembly instructions
+REM and uplink support. See NOTES-WINDOWS.md in source.
 if "%target_platform%"=="win-arm64" (
-    set OSSL_CONFIGURE=VC-WIN64-ARM
+    set OSSL_CONFIGURE=VC-WIN64-CLANGASM-ARM
 ) else if "%ARCH%"=="32" (
     set OSSL_CONFIGURE=VC-WIN32
 ) else (
