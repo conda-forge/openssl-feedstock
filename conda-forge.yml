@@ -1,9 +1,8 @@
 bot:
   abi_migration_branches:
+  - 3.6.x
   - 3.5.x
   - 3.4.x
-  - 3.3.x
-  - 3.2.x
   - 3.0.x
 build_platform:
   linux_ppc64le: linux_64
