@@ -31,6 +31,10 @@ case "$target_platform" in
     _CONFIG_OPTS+=(linux-ppc64le)
     CFLAGS="${CFLAGS} -Wa,--noexecstack"
     ;;
+  linux-riscv64)
+    _CONFIG_OPTS+=(linux64-riscv64)
+    CFLAGS="${CFLAGS} -Wa,--noexecstack"
+    ;;
   osx-64)
     _CONFIG_OPTS+=(darwin64-x86_64-cc)
     ;;
