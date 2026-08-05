@@ -45,7 +45,7 @@ outputs:
     test:
       requires:
         - pkg-config
-        - ripgrep
+        - ripgrep       # [win]
       commands:
         - copy NUL checksum.txt        # [win]
         - touch checksum.txt           # [unix]
