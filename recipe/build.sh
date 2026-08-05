@@ -31,6 +31,10 @@ case "$target_platform" in
     _CONFIG_OPTS+=(linux-ppc64le)
     CFLAGS="${CFLAGS} -Wa,--noexecstack"
     ;;
+  linux-riscv64)
+    _CONFIG_OPTS+=(linux64-riscv64)
+    CFLAGS="${CFLAGS} -Wa,--noexecstack"
+    ;;
   osx-64)
     _CONFIG_OPTS+=(darwin64-x86_64-cc)
     ;;
@@ -57,7 +61,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]] || [[ "$(uname -s)" = "Linux"
       # See: https://github.com/openssl/openssl/blob/openssl-3.0.0/test/recipes/02-test_errstr.t#L20-L26
       rm ./test/recipes/02-test_errstr.t
   fi
-  if [[ "$target_platform" == "linux-aarch64" ]]; then
+  if [[ "$target_platform" == "linux-aarch64" || "$target_platform" == "linux-riscv64" ]]; then
       # https://github.com/openssl/openssl/issues/17900
       rm ./test/recipes/30-test_afalg.t
   fi

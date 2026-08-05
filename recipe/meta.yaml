@@ -9,7 +9,7 @@ source:
   sha256: a8c0d28a529ca480f9f36cf5792e2cd21984552a3c8e4aa11a24aa31aeac98e8
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -44,8 +44,9 @@ outputs:
         - ca-certificates
     test:
       requires:
-        - pkg-config
-        - ripgrep
+        # avoid pkg-config during arch bring-up
+        - pkg-config    # [not riscv64]
+        - ripgrep       # [win]
       commands:
         - copy NUL checksum.txt        # [win]
         - touch checksum.txt           # [unix]
@@ -55,9 +56,9 @@ outputs:
         - if not exist "%LIBRARY_INC%"\\openssl\\applink.c exit 1    # [win]
 
         # test pkgconfig metadata
-        - pkg-config --print-errors --exact-version "{{ version }}" openssl
+        - pkg-config --print-errors --exact-version "{{ version }}" openssl             # [not riscv64]
         # test prefix is set as well (see #155)
-        - if [[ "$(pkg-config --variable=prefix openssl)" == "" ]]; then exit 1; fi     # [unix]
+        - if [[ "$(pkg-config --variable=prefix openssl)" == "" ]]; then exit 1; fi     # [unix and not riscv64]
 
         # ensure (de)activation scripts for bash-on-win do not contain crlf line endings;
         # ripgrep will return exit code 1 if no match is found, which is what we want after
